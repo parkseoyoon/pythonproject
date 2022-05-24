@@ -4,7 +4,7 @@ conn = cx_Oracle.connect('scott', 'tiger', 'localhost:1521/XE')
 cursor = conn.cursor()
 cursor.execute("create table fruit(product varchar2(20), stock number(3), price number(10), receive number(8), sweet number(1))")
           
-
+#수정
 while True:
     choice=input('''
 다음 중에서 하실 일을 골라주세요 :
