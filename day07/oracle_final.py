@@ -3,7 +3,6 @@
 # 프로그램 최초 실행시 테이블 생성(cursor.execute("create~~"))
 # 테이블명 fruit
 # 열이름 product(가변형 문자열 20자리), stock(정수형 숫자 3자리), price(정수형 숫자 10자리), receive(정수형 숫자 8자리), sweet(정수형 숫자 1자리)
-# *처음 프로그램 실행하며 테이블 생성 후 cursor.execute("create~")문 주석처리(테이블 생성 이후 중복 생성 불가)
 
 # 1. 기능
 # 과일 입력(I), 과일 판매(S), 재고 리스트(L), 품절품목확인(C), 삭제(D), 종료(Q)
@@ -35,7 +34,9 @@ import cx_Oracle
 
 conn = cx_Oracle.connect('scott', 'tiger', 'localhost:1521/XE')
 cursor = conn.cursor()
-cursor.execute("create table fruit(product varchar2(20), stock number(3), price number(10), receive number(8), sweet number(1))")
+cursor.execute("select count(*) from all_tables where table_name = 'fruit'")
+if cursor == 0:
+    cursor.execute("create table fruit(product varchar2(20), stock number(3), price number(10), receive number(8), sweet number(1))")
           
 while True:
     choice=input('''
