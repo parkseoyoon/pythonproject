@@ -1,6 +1,6 @@
 # 과일가게 재고 프로그램 구축
 
-# 프로그램 실행시 테이블 생성(cursor.execute("create~~"))
+# 프로그램 최초 실행시 테이블 생성(cursor.execute("create~~"))
 # 테이블명 fruit
 # 열이름 product(가변형 문자열 20자리), stock(정수형 숫자 3자리), price(정수형 숫자 10자리), receive(정수형 숫자 8자리), sweet(정수형 숫자 1자리)
 # *처음 프로그램 실행하며 테이블 생성 후 cursor.execute("create~")문 주석처리(테이블 생성 이후 중복 생성 불가)
